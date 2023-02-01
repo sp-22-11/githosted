@@ -101,14 +101,14 @@ section {
 }
 
 .right .image {
-  width: calc(50% - 2pt);
   height: calc(50% - 2pt);
-  border: 1pt solid cyan;
+  /* border: 1pt solid cyan; */
 }
 
-.right .img {
+.right img {
   max-width: calc(100% - 2pt);
   max-height: calc(100% - 2pt);
+  border: 1pt solid greenyellow;
 }
 
 /* .limgtop, .rimgtop {
