@@ -31,14 +31,67 @@ p, h1, h2, h3, h4, h5, h6 {
 
 
 nav {
-    border: 1pt solid blue;
-    margin: 0 10pt;
+  height: 5vh;
+  /* padding: 0.25rem; */
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  display: float;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1 1 auto;
+  font-size: 1rem;
+  padding: 3px;
+}
+
+
+.navbar:not(:last-child):after {
+  content: "";
+  height: 5vh;
+  margin: auto;
+  border-right: 1pt solid gray;
+  /* https://stackoverflow.com/questions/41631136/add-dividing-line-between-flex-items-with-equal-space-distribution */
+}
+
+.logosum {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.5vw;
+}
+
+.logosum span {
+  font-size: 1.3rem;
+  line-height: 1.3em;
+  font-weight: 800;
+  width: 1.5vw;
+  text-align: center;
+  color: black;
+  background-color: white;
+}
+
+input[type=text] {
+  margin: 5px;
 }
 
 
 /* -------------------------------------------------- */
+section {
+  padding: 5vh 1vw;
+}
+
 .bartext {
     font-size: 1.5rem;
+}
+
+.date {
+  color: grey;
 }
 
 .bar {
@@ -50,9 +103,6 @@ nav {
     padding: 5px 5px;
 }
 
-section {
-    margin: 5vh 1vw;
-}
 
 .top {
     display: flex;
@@ -62,7 +112,7 @@ section {
     align-items: center;
     padding: 5px 0px;
     gap: 10px;
-}   
+}
 
 .left,
 .right {
@@ -95,64 +145,89 @@ section {
 .right {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   align-content: space-between;
-  border: 1pt solid magenta;
+  column-gap: 1px;
+  row-gap: 1px;
+  margin-left:4px;
 }
 
 .right .image {
-  width:  calc(50% - 2px);
-  height:  calc(50% - 2px);
-  border: 1pt solid cyan;
+  width: calc(50% - 1px);
+  height: calc(50% - 1px);
 }
 
 .right img {
-  max-width: calc(100% - 2px);
-  max-height: calc(100% - 2px);
-  border: 1pt solid greenyellow;
+  width: 100%;
+  height: 100%;
+  /* either of the next two lines works, the difference is the aspect ratio */
+  /* object-fit: crops, but keeps aspect ratio */
+  /* max-height distorts aspect ratio */
+  object-fit: cover;
+  /* max-height: 100%; */
 }
 
-/* .limgtop, .rimgtop {
-  width: 24vw;
-  border: 1pt solid cyan;
-} */
-
-/* 
-.right .rimgtop {
-  width: 24vw;
-  height: 24vh;
-  padding: 0px 0px 2px 1px;
-}
-
-.right .limgbottom {
-  width: 24vw;
-  height: 24vh;
-  padding: 1px 1px 0px 0px;
-}
-
-.right .rimgbottom {
-  width: 24vw;
-  height: 24vh;
-  padding: 1px 0px 0px 1px;
-} */
-/* .right.image {    height: 50%;
-} */
 .right .textover {
-    font-size: 1em;
+    font-size: 1rem;
     width: 90%;
 }
+
+.title {
+  font-weight: bold;
+}
+
+
 
 h2 {
   width: 100vw;
   max-width: 100%;
+  margin-left: 4px;
+  margin-bottom: 1vh;
+  padding-left: 4px;
+  border-left: 4px solid red;
 }
 
 .bottom {
     display: flex;
     justify-content: space-evenly;
+    column-gap: 10px;
     height: 40vh;
 }
 
-.bottom img {
-    width: 33%
+.newsart {
+    width: 33%;
+    height: 100%;
+}
+
+.newsart img {
+  height: 30vh;
+  width: 100%;
+  object-fit: cover;
+}
+
+.newsart h3{
+  margin-top: 10px;
+}
+
+.newsart p {
+  margin-top: 10px;
+}
+
+p.categoryred,
+p.categoryblue,
+p.categorygray {
+  color: darkgray;
+  font-size: 0.8rem;
+  line-height: 0.8rem;
+  border-left: 2px solid red;
+  margin-top: 15px;
+  padding-left: 4px;
+}
+
+.categoryblue {
+  border-left: 2px solid lightskyblue;
+}
+
+.categorygray {
+  border-left: 2px solid gray;
 }
