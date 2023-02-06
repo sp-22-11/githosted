@@ -1,13 +1,14 @@
 *, *::before, *::after {
-  box-sizing: border-box;
-}
+    box-sizing: border-box;
+  }
 * {
   margin: 0;
-  padding: 0; /* me */
-  font-family: Arial, Helvetica, sans-serif; /* me */
 }
 html, body {
   min-height: 100vh;
+  /* https://www.freecodecamp.org/news/html-page-width-height/ */
+  /* JC uses 100% b/c on mobile 100vh will take up more than 100% of the screen real estate, because mobile browsers do that thing where the browser UI comes and goes. */
+  font-family: 'Roboto', sans-serif;
 }
 body {
   line-height: 1.5;
@@ -27,207 +28,157 @@ p, h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 }
 /* https://www.joshwcomeau.com/css/custom-css-reset/ */
-/* -------------------------------------------------- */
+/* maybe should compare with https://meyerweb.com/eric/tools/css/reset */
 
+@font-face {
+  font-family: ;
+  src: url();
+}
 
-nav {
-  height: 5vh;
-  /* padding: 0.25rem; */
-  background-color: black;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+header,
+footer {
+  background-color: #1f2937;
   color: white;
-  display: float;
-  padding: 0 4vw;
 }
 
-.navelem {
+header,
+section,
+footer {
+  padding: 5vh 15vw;
+}
+
+.top,
+.bottom {
   display: flex;
-  flex: 1 1 auto;
-  align-items: center;
-}
-
-.navelem:not(:last-child):after {
-  content: "";
-  height: 5vh;
-  margin: auto;
-  border-right: 1pt solid gray;
-  /* https://stackoverflow.com/questions/41631136/add-dividing-line-between-flex-items-with-equal-space-distribution */
-}
-
-.logosum {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  column-gap: 0.5vw;
-}
-
-.logosum span {
-  font-size: 1.3rem;
-  line-height: 1.3em;
-  font-weight: 800;
-  width: 1.5vw;
-  text-align: center;
-  color: black;
-  background-color: white;
-}
-
-input[type=text] {
-  margin: 5px;
-}
-
-h4.navbar {
-  font-size: 1rem;
-}
-
-/* -------------------------------------------------- */
-section {
-  padding: 5vh 5vw;
-}
-
-.bartext {
-    font-size: 1.5rem;
-}
-
-.date {
-  color: grey;
-}
-
-.bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100vw;
-    max-width: 100%;
-    padding: 5px 5px;
-}
-
-
-.top {
-    display: flex;
-    width: 100vw;
-    max-width: 100%;
-    height: 50vh;
-    align-items: center;
-    padding: 5px 0px;
-    gap: 10px;
-}
-
-.left,
-.right {
-  width: 50vw;
-  height: 100%;
-}
-
-.left img {
-  width: 100%;
-  height: 100%;
-}
-
-.left .textover {
-    font-size: 1.3em;
-}
-
-.image {
-    position: relative;
-    color: white;
-}
-
-.textover {
-  padding: 5px;
-  position: absolute;
-  bottom: 10%;
-  left: 5%;
-  width: 90%;
-}
-
-.right {
-  display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-  align-content: space-between;
-  column-gap: 1px;
-  row-gap: 1px;
-  margin-left:4px;
+  margin-bottom: 5vh;
 }
 
-.right .image {
-  width: calc(50% - 1px);
-  height: calc(50% - 1px);
-}
-
-.right img {
-  width: 100%;
-  height: 100%;
-  /* either of the next two lines works, the difference is the aspect ratio */
-  /* object-fit: crops, but keeps aspect ratio */
-  /* max-height distorts aspect ratio */
-  object-fit: cover;
-  /* max-height: 100%; */
-}
-
-.right .textover {
-    font-size: 1rem;
-    width: 90%;
-}
-
-.title {
+.top span {
   font-weight: bold;
 }
 
+a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  color: #f9faf8;
+  padding: 0 1vw;
+}
 
+a:hover {
+  color: orangered
+}
+
+.lefthead,
+.headimg {
+  max-width: 45vw;
+  max-height: 40vh;
+  color: #f9faf8;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: bolder;
+}
+
+.lefthead p {
+  font-size: 18px;
+  color: #f9faf8;
+  margin: 3vh 0;
+}
+
+.headimg {
+  padding-left: 3vw;
+}
+
+.button,
+.call2Action {
+  background-color: #3882f6;
+  color: white;
+  border: 0;
+  border-radius: 10px;
+  padding: 1vh 2vw;
+}
+
+.button {
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: aqua;
+  color: pink;
+  transition: 0.7s;
+}
+
+.secttitle {
+  text-align: center;
+}
 
 h2 {
-  width: 100vw;
-  max-width: 100%;
-  margin-left: 4px;
-  margin-bottom: 1vh;
-  padding-left: 4px;
-  border-left: 4px solid red;
+  font-size: 36px;
+  font-weight: bolder;
+  color: #1f2937;
 }
 
-.bottom {
-    display: flex;
-    justify-content: space-evenly;
-    column-gap: 10px;
-    height: 40vh;
+.container {
+  margin-top: 5vh;
+  display: flex;
+  justify-content: space-between;
+  column-gap: 5vw;
 }
 
-.newsart {
-    width: 33%;
-    height: 100%;
+.container img {
+  min-height: 25vh;
+  max-height: 25vh;
+  border: 5pt solid #3882f6;
+  border-radius: 10%;
+  margin-bottom: 2vh;
 }
 
-.newsart img {
-  height: 30vh;
-  width: 100%;
-  object-fit: cover;
+.quote {
+  background-color: #e5e7eb;
+  margin: 15vh 0;
+  padding: 10vh 15vw;
+  font-size: 36px;
+  font-style: italic;
+  font-weight: 100;
+  color: #1f2937;
 }
 
-.newsart h3{
-  margin-top: 10px;
+.quote span {
+  padding-top: 5vh;
+  display: flex;
+  font-size: 2rem;
+  font-weight: bold;
+  font-style: normal;
+  justify-content: right;
 }
 
-.newsart p {
-  margin-top: 10px;
+.call2Action {
+  margin: 10vh 15vw;
+  padding: 5vh 10vw;
+  height: 20vh;
+  display: flex;
 }
 
-p.categoryred,
-p.categoryblue,
-p.categorygray {
-  color: darkgray;
-  font-size: 0.8rem;
-  line-height: 0.8rem;
-  border-left: 2px solid red;
-  margin-top: 15px;
-  padding-left: 4px;
+h4 {
+  font-size: 2rem;
 }
 
-.categoryblue {
-  border-left: 2px solid lightskyblue;
+.c2ARight {
+  padding-left: 8vw;
+  align-self: center;
 }
 
-.categorygray {
-  border-left: 2px solid gray;
+.call2Action .button {
+  padding: 0.5vh 2vw;
+  border: 2pt solid white;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
 }
